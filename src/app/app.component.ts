@@ -1,8 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Book } from '../books/books.model';
-import { BookService } from '../books/book.service';
-import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { bookActions } from '../books/state/book.actions';
