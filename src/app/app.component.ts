@@ -5,7 +5,7 @@ import { BookService } from '../books/book.service';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
-import { bookActions } from '../books/state/books.actions';
+import { bookActions } from '../books/state/book.actions';
 import { booksSelector } from '../books/state/book.selector';
 
 @Component({

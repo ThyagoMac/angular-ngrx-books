@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { Book } from '../books.model';
-import { bookActions } from './books.actions';
+import { bookActions } from './book.actions';
 
 enum BookStatus {
   loading = 'loading',
