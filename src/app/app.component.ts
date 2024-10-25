@@ -32,8 +32,11 @@ export class AppComponent implements OnInit {
 
   addBook(e: Event) {
     e.preventDefault();
-    console.log('pipi?', this.newBook);
     this.store.dispatch(bookActions.addBookAction(this.newBook));
+  }
+
+  deleteBook(id: number | undefined) {
+    this.store.dispatch(bookActions.deleteBookAction({ id }));
   }
 
   /* APIO request with CommonModule

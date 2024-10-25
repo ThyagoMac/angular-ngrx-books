@@ -10,7 +10,7 @@ const addBookAction = createAction('[Books] Add Book', props<Book>());
 //const addBookAction = createAction('[Books] Add Book', props<{ book: Book }>)
 const deleteBookAction = createAction(
   '[Book] Delete Book',
-  props<{ id: number }>()
+  props<{ id: number | undefined }>()
 );
 export const bookActions = {
   loadBooks,

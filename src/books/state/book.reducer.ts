@@ -39,11 +39,11 @@ export const bookReducer = createReducer(
   on(bookActions.addBookAction, (currentState, payload) => {
     const finalBook = {
       ...payload,
-      id: currentState.books.length + 1,
+      id: Math.floor(Math.random() * 90000),
     };
     return {
       ...currentState,
-      books: [...currentState.books, finalBook],
+      books: [finalBook, ...currentState.books],
       status: BookStatus.success,
     };
   }),

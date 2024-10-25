@@ -37,8 +37,9 @@
     <hr />
     @for (book of books$ | async; track $index) {
     <div>
-      <header>
+      <header class="flex gap-2">
         <h3 class="book-title">{{ book.name }}</h3>
+        <button (click)="deleteBook(book.id)">🚮</button>
       </header>
       <section>
         <p class="book-body">{{ book.summary }}</p>

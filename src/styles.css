@@ -7,3 +7,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.inline {
+  display: inline;
+}
+.flex {
+  display: flex;
+}
+
+.gap-1 {
+  gap: 0.25rem /* 4px */;
+}
+.gap-2 {
+  gap: 0.5rem /* 8px */;
+}
