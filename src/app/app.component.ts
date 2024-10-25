@@ -33,6 +33,11 @@ export class AppComponent implements OnInit {
   addBook(e: Event) {
     e.preventDefault();
     this.store.dispatch(bookActions.addBookAction(this.newBook));
+    this.newBook = {
+      name: '',
+      summary: '',
+      author: '',
+    };
   }
 
   deleteBook(id: number | undefined) {
