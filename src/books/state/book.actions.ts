@@ -6,8 +6,15 @@ const loadedBooksSuccess = createAction(
   '[Books] Loaded Books Success',
   props<{ books: Book[] }>()
 );
-
+const addBookAction = createAction('[Books] Add Book', props<Book>());
+//const addBookAction = createAction('[Books] Add Book', props<{ book: Book }>)
+const deleteBookAction = createAction(
+  '[Book] Delete Book',
+  props<{ id: number }>()
+);
 export const bookActions = {
   loadBooks,
   loadedBooksSuccess,
+  addBookAction,
+  deleteBookAction,
 };

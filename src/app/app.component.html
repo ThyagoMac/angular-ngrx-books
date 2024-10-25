@@ -1,5 +1,40 @@
 <main class="main">
   <div class="content">
+    <form (ngSubmit)="addBook($event)">
+      <div>
+        <label for="name">Title:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          [(ngModel)]="newBook.name"
+          required
+        />
+      </div>
+      <div>
+        <label for="summary">Summary:</label>
+        <input
+          type="text"
+          id="summary"
+          name="summary"
+          [(ngModel)]="newBook.summary"
+          required
+        />
+      </div>
+      <div>
+        <label for="author">Author:</label>
+        <input
+          type="text"
+          id="author"
+          name="author"
+          [(ngModel)]="newBook.author"
+          required
+        />
+      </div>
+
+      <button type="submit">Add New Book</button>
+    </form>
+    <hr />
     @for (book of books$ | async; track $index) {
     <div>
       <header>

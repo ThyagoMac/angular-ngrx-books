@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { bookActions } from '../books/state/book.actions';
 import { booksSelector } from '../books/state/book.selector';
+import { Book } from '../books/books.model';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -16,11 +18,22 @@ export class AppComponent implements OnInit {
   title = 'angular-ngrx-books';
 
   store = inject(Store);
-
   books$ = this.store.select(booksSelector);
+
+  newBook: Book = {
+    name: '',
+    summary: '',
+    author: '',
+  };
 
   ngOnInit(): void {
     this.store.dispatch(bookActions.loadBooks());
+  }
+
+  addBook(e: Event) {
+    e.preventDefault();
+    console.log('pipi?', this.newBook);
+    this.store.dispatch(bookActions.addBookAction(this.newBook));
   }
 
   /* APIO request with CommonModule

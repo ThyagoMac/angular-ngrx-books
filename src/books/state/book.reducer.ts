@@ -35,5 +35,23 @@ export const bookReducer = createReducer(
       books: payload.books,
       status: BookStatus.success,
     };
+  }),
+  on(bookActions.addBookAction, (currentState, payload) => {
+    const finalBook = {
+      ...payload,
+      id: currentState.books.length + 1,
+    };
+    return {
+      ...currentState,
+      books: [...currentState.books, finalBook],
+      status: BookStatus.success,
+    };
+  }),
+  on(bookActions.deleteBookAction, (currentState, { id }) => {
+    return {
+      ...currentState,
+      books: currentState.books.filter((book) => book.id !== id),
+      status: BookStatus.success,
+    };
   })
 );
